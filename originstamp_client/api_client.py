@@ -21,7 +21,7 @@ import tempfile
 
 # python 2 and python 3 compatibility library
 import six
-from numpy.core import long
+from numpy import long
 from six.moves.urllib.parse import quote
 
 from originstamp_client.configuration import Configuration
