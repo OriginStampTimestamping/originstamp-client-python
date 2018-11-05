@@ -20,12 +20,13 @@ Python 2.7 and 3.4+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on Github, you can install directly from Github
+Install the python package using the following command:
 
 ```sh
-pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
+pip install originstamp-client==1.0.0
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git`)
+
+See [PyIP](https://pypi.org/project/originstamp-client/) for latest available version.
 
 Then import the package:
 ```python
