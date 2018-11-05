@@ -153,6 +153,8 @@ Name | Type | Description  | Notes
 
 Proof
 
+Attention! For the different request types (XML and PDF), there have to be passed different options. See the example for more details.
+
 This request can be used to proof a submission of a hash. This interface is required to request the evidence. With the help of this proof the verification of a timestamp independent from OriginStamp is necessary. A guide for the verification can be found herehttps://github.com/OriginStampTimestamping/originstamp-verification . Usually, the proof should be requested for each transferred hash and kept with the timestamped data so that an independent verification of the timestamp is possible at any time. As input, the used currency, the hash string and the type of proof is required. Then a file with the information for the submission proof will be returned. If the hash was submitted in an API version lower than 3, a XML file containing the essential information of the Merkle Tree will be returned. Otherwise, the seed file will be returned.  The file name can be found in the header of the response. An example could look like this: content-disposition: attachment; filename=\"certificate_6d70a947e19398f1106ad70a60bd34a8305bdcb624b5b7d43782315517e79cad.pdf\" A sample XML file can be found here https://originstamp.org/assets/proof/proof_6d70a947e19398f1106ad70a60bd34a8305bdcb624b5b7d43782315517e79cad.xml and a sample PDF can be found here https://originstamp.org/assets/proof/certificate_6d70a947e19398f1106ad70a60bd34a8305bdcb624b5b7d43782315517e79cad.pdf .
 
 ### Example
@@ -166,12 +168,29 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = originstamp_client.TimestampApi()
 authorization = 'authorization_example' # str | A valid API key is essential for authorization to handle the request.
-proof_request = originstamp_client.ProofRequest() # ProofRequest | Information needed to return the hash status information.
+proof_request = originstamp_client.ProofRequest(0, hash, 0) # ProofRequest for XML | Information needed to return the hash status information.
+proof_request2 = originstamp_client.ProofRequest(0, hash, 1) # ProofRequest for PDF | Information needed to return the hash status information.
 
 try:
     # Proof
-    api_response = api_instance.get_proof(authorization, proof_request)
-    pprint(api_response)
+    # argument dictionary for request
+    kwargs = {}
+    
+    # set to true for XML requests
+    kwargs['_preload_content'] = True
+    # pass in the arguments
+    pprint(api_instance.get_proof_with_http_info(authorization, proof_request, **kwargs))
+    
+    # set to false for PDF requests
+    kwargs['_preload_content'] = False
+
+    # get the binary data
+    data = api_instance.get_proof(authorization, proof_request2, **kwargs).data
+
+    # write binary data to file
+    f = open("test.pdf", "w+b")
+    f.write(bytearray(data))
+    f.close()
 except ApiException as e:
     print("Exception when calling TimestampApi->get_proof: %s\n" % e)
 ```
