@@ -50,9 +50,6 @@ Name | Type | Description  | Notes
 
 [**DefaultTimestampResponse**](DefaultTimestampResponse.md)
 
-### Authorization
-
-No authorization required
 
 ### HTTP request headers
 
@@ -97,10 +94,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DefaultUsageResponse**](DefaultUsageResponse.md)
-
-### Authorization
-
-No authorization required
 
 ### HTTP request headers
 
@@ -148,10 +141,6 @@ Name | Type | Description  | Notes
 
 [**DefaultTimestampResponse**](DefaultTimestampResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: Not defined
@@ -198,10 +187,6 @@ Name | Type | Description  | Notes
 
 **str**
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
@@ -247,10 +232,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Defaultstring**](Defaultstring.md)
-
-### Authorization
-
-No authorization required
 
 ### HTTP request headers
 
