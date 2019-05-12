@@ -23,7 +23,7 @@ Python 2.7 and 3.4+
 Install the python package using the following command:
 
 ```sh
-pip install originstamp-client==1.0.1
+pip install originstamp-client==1.0.2
 ```
 
 See [PyIP](https://pypi.org/project/originstamp-client/) for latest available version.
