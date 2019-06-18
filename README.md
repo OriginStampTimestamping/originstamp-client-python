@@ -103,6 +103,15 @@ Class | Method | HTTP request | Description
  - [WebhookRequest](docs/WebhookRequest.md)
 
 
+## Documentation for Authorization
+
+Authentication schemes defined for the API:
+### Key Authorization
+
+- **Type**: API key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
+
 ## Author
 
 mail@originstamp.com
