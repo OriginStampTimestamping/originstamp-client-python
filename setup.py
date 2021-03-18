@@ -12,7 +12,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "originstamp-client"
-VERSION = "1.0.1"
+VERSION = "2.0.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -38,6 +38,6 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    The following documentation describes the API v3 for OriginStamp. OriginStamp is a trusted timestamping service that uses the decentralized blockchain to store anonymous, tamper-proof timestamps for any digital content. OriginStamp allows users to timestamp files, emails, or plain text, and subsequently store the created hashes in the blockchain as well as retrieve and verify timetamps that have been committed to the blockchain.The trusted timestamping service of OriginStamp allows you to generate a hash fingerprint and prove that it was created at a specific point in time. If you are interested in integrating trusted timestamping into your own project, feel free to use our provided API. The following interactive documentation describes the interfaces and supports your integration. With this documentation you are able to try out the different requests and see the responses. For the authorization, add your API key to the Authorization header of your request.&lt;br/&gt;&lt;h2&gt;Timestamping Steps&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;&lt;strong&gt;Determine Hash: &lt;/strong&gt; Calculate the SHA-256 of your record using a cryptographic library.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Create Timestamp: &lt;/strong&gt;Create a timestamp and add meta information to index it, e.g. a comment. You can also request a notification (email or webhook) once the tamper-proof timestamp has been created.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Archive original file: &lt;/strong&gt;Since we have no access to your original data, you should archive it because the timestamp is only valid in combination with the original file.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Check Timestamp Status: &lt;/strong&gt;Since the timestamps are always transmitted to the blockchain network at certain times, i.e. there is a delay, you can check the status of a hash and thus get the timestamp information.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Get Timestamp Proof: &lt;/strong&gt;As soon as the tamper-proof timestamp has been generated, you should archive the proof (Merkle Tree), which we created in our open procedure, together with the original file. With this proof, the existence of the file can be verified independently of OriginStamp. Here you can choose if the raw proof (xml) is sufficient proof or if you want to have a certificate (pdf).&lt;/li&gt;&lt;/ol&gt;&lt;br/&gt;&lt;h2&gt;Installation Notes&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;Make sure you set the Authorization header correctly using your API key.&lt;/li&gt;&lt;li&gt;If a Cloudflare error occurs, please set a custom UserAgent header.&lt;/li&gt;&lt;li&gt;Please have a look at the models below to find out what each field means.&lt;/li&gt;&lt;/ul&gt;  # noqa: E501
+    Python client for the trusted timestamping service OriginStamp, see https://github.com/OriginStampTimestamping/originstamp-client-python.
     """
 )
