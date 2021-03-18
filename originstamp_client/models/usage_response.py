@@ -30,37 +30,108 @@ class UsageResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'certificate_per_month': 'int',
+        'consumed_certificates': 'int',
         'consumed_credits': 'float',
+        'consumed_timestamps': 'int',
         'credits_per_month': 'float',
-        'remaining_credits': 'float'
+        'limitation_type': 'int',
+        'remaining_credits': 'float',
+        'timestamps_per_month': 'int'
     }
 
     attribute_map = {
+        'certificate_per_month': 'certificate_per_month',
+        'consumed_certificates': 'consumed_certificates',
         'consumed_credits': 'consumed_credits',
+        'consumed_timestamps': 'consumed_timestamps',
         'credits_per_month': 'credits_per_month',
-        'remaining_credits': 'remaining_credits'
+        'limitation_type': 'limitation_type',
+        'remaining_credits': 'remaining_credits',
+        'timestamps_per_month': 'timestamps_per_month'
     }
 
-    def __init__(self, consumed_credits=None, credits_per_month=None, remaining_credits=None):  # noqa: E501
+    def __init__(self, certificate_per_month=None, consumed_certificates=None, consumed_credits=None, consumed_timestamps=None, credits_per_month=None, limitation_type=None, remaining_credits=None, timestamps_per_month=None):  # noqa: E501
         """UsageResponse - a model defined in Swagger"""  # noqa: E501
 
+        self._certificate_per_month = None
+        self._consumed_certificates = None
         self._consumed_credits = None
+        self._consumed_timestamps = None
         self._credits_per_month = None
+        self._limitation_type = None
         self._remaining_credits = None
+        self._timestamps_per_month = None
         self.discriminator = None
 
+        if certificate_per_month is not None:
+            self.certificate_per_month = certificate_per_month
+        if consumed_certificates is not None:
+            self.consumed_certificates = consumed_certificates
         if consumed_credits is not None:
             self.consumed_credits = consumed_credits
+        if consumed_timestamps is not None:
+            self.consumed_timestamps = consumed_timestamps
         if credits_per_month is not None:
             self.credits_per_month = credits_per_month
+        if limitation_type is not None:
+            self.limitation_type = limitation_type
         if remaining_credits is not None:
             self.remaining_credits = remaining_credits
+        if timestamps_per_month is not None:
+            self.timestamps_per_month = timestamps_per_month
+
+    @property
+    def certificate_per_month(self):
+        """Gets the certificate_per_month of this UsageResponse.  # noqa: E501
+
+        Total number of certificates available per month.  # noqa: E501
+
+        :return: The certificate_per_month of this UsageResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._certificate_per_month
+
+    @certificate_per_month.setter
+    def certificate_per_month(self, certificate_per_month):
+        """Sets the certificate_per_month of this UsageResponse.
+
+        Total number of certificates available per month.  # noqa: E501
+
+        :param certificate_per_month: The certificate_per_month of this UsageResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._certificate_per_month = certificate_per_month
+
+    @property
+    def consumed_certificates(self):
+        """Gets the consumed_certificates of this UsageResponse.  # noqa: E501
+
+        Number of certificates requested for the current month.  # noqa: E501
+
+        :return: The consumed_certificates of this UsageResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._consumed_certificates
+
+    @consumed_certificates.setter
+    def consumed_certificates(self, consumed_certificates):
+        """Sets the consumed_certificates of this UsageResponse.
+
+        Number of certificates requested for the current month.  # noqa: E501
+
+        :param consumed_certificates: The consumed_certificates of this UsageResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._consumed_certificates = consumed_certificates
 
     @property
     def consumed_credits(self):
         """Gets the consumed_credits of this UsageResponse.  # noqa: E501
 
-        Represents the number of used credits for the current month.  # noqa: E501
+        Number of used credits for the current month.  # noqa: E501
 
         :return: The consumed_credits of this UsageResponse.  # noqa: E501
         :rtype: float
@@ -71,13 +142,36 @@ class UsageResponse(object):
     def consumed_credits(self, consumed_credits):
         """Sets the consumed_credits of this UsageResponse.
 
-        Represents the number of used credits for the current month.  # noqa: E501
+        Number of used credits for the current month.  # noqa: E501
 
         :param consumed_credits: The consumed_credits of this UsageResponse.  # noqa: E501
         :type: float
         """
 
         self._consumed_credits = consumed_credits
+
+    @property
+    def consumed_timestamps(self):
+        """Gets the consumed_timestamps of this UsageResponse.  # noqa: E501
+
+        Number of timestamps created for the current month.  # noqa: E501
+
+        :return: The consumed_timestamps of this UsageResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._consumed_timestamps
+
+    @consumed_timestamps.setter
+    def consumed_timestamps(self, consumed_timestamps):
+        """Sets the consumed_timestamps of this UsageResponse.
+
+        Number of timestamps created for the current month.  # noqa: E501
+
+        :param consumed_timestamps: The consumed_timestamps of this UsageResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._consumed_timestamps = consumed_timestamps
 
     @property
     def credits_per_month(self):
@@ -103,10 +197,33 @@ class UsageResponse(object):
         self._credits_per_month = credits_per_month
 
     @property
+    def limitation_type(self):
+        """Gets the limitation_type of this UsageResponse.  # noqa: E501
+
+        Determines which usage metric is applied (0 = credits, 1 = timestamps).  # noqa: E501
+
+        :return: The limitation_type of this UsageResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._limitation_type
+
+    @limitation_type.setter
+    def limitation_type(self, limitation_type):
+        """Sets the limitation_type of this UsageResponse.
+
+        Determines which usage metric is applied (0 = credits, 1 = timestamps).  # noqa: E501
+
+        :param limitation_type: The limitation_type of this UsageResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._limitation_type = limitation_type
+
+    @property
     def remaining_credits(self):
         """Gets the remaining_credits of this UsageResponse.  # noqa: E501
 
-        Represents the remaining number of credits for the current month.  # noqa: E501
+        Remaining number of credits for the current month.  # noqa: E501
 
         :return: The remaining_credits of this UsageResponse.  # noqa: E501
         :rtype: float
@@ -117,13 +234,36 @@ class UsageResponse(object):
     def remaining_credits(self, remaining_credits):
         """Sets the remaining_credits of this UsageResponse.
 
-        Represents the remaining number of credits for the current month.  # noqa: E501
+        Remaining number of credits for the current month.  # noqa: E501
 
         :param remaining_credits: The remaining_credits of this UsageResponse.  # noqa: E501
         :type: float
         """
 
         self._remaining_credits = remaining_credits
+
+    @property
+    def timestamps_per_month(self):
+        """Gets the timestamps_per_month of this UsageResponse.  # noqa: E501
+
+        Total number of timestamps available per month.  # noqa: E501
+
+        :return: The timestamps_per_month of this UsageResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._timestamps_per_month
+
+    @timestamps_per_month.setter
+    def timestamps_per_month(self, timestamps_per_month):
+        """Sets the timestamps_per_month of this UsageResponse.
+
+        Total number of timestamps available per month.  # noqa: E501
+
+        :param timestamps_per_month: The timestamps_per_month of this UsageResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._timestamps_per_month = timestamps_per_month
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -146,6 +286,9 @@ class UsageResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(UsageResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

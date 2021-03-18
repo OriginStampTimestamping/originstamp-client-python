@@ -15,24 +15,34 @@
 from __future__ import absolute_import
 
 # import apis into sdk package
+from originstamp_client.api.api_key_api import APIKeyApi
+from originstamp_client.api.bulk_api import BulkApi
+from originstamp_client.api.proof_api import ProofApi
 from originstamp_client.api.scheduler_api import SchedulerApi
 from originstamp_client.api.timestamp_api import TimestampApi
+from originstamp_client.api.webhook_api import WebhookApi
 
 # import ApiClient
 from originstamp_client.api_client import ApiClient
 from originstamp_client.configuration import Configuration
 # import models into sdk package
-from originstamp_client.models.default_scheduler_response import DefaultSchedulerResponse
-from originstamp_client.models.default_timestamp_response import DefaultTimestampResponse
+from originstamp_client.models.currency_model import CurrencyModel
+from originstamp_client.models.default_of_download_link_response import DefaultOfDownloadLinkResponse
+from originstamp_client.models.default_of_list_of_currency_model import DefaultOfListOfCurrencyModel
+from originstamp_client.models.default_of_timestamp_data import DefaultOfTimestampData
+from originstamp_client.models.default_of_timestamp_response import DefaultOfTimestampResponse
+from originstamp_client.models.default_of_void import DefaultOfVoid
+from originstamp_client.models.default_of_webhook_response import DefaultOfWebhookResponse
+from originstamp_client.models.default_ofstring import DefaultOfstring
 from originstamp_client.models.default_usage_response import DefaultUsageResponse
-from originstamp_client.models.defaultstring import Defaultstring
+from originstamp_client.models.download_link_response import DownloadLinkResponse
+from originstamp_client.models.manual_webhook_request import ManualWebhookRequest
 from originstamp_client.models.notification import Notification
 from originstamp_client.models.proof_request import ProofRequest
-from originstamp_client.models.response_entity import ResponseEntity
-from originstamp_client.models.scheduler_request import SchedulerRequest
-from originstamp_client.models.scheduler_response import SchedulerResponse
+from originstamp_client.models.timestamp_bulk_request import TimestampBulkRequest
 from originstamp_client.models.timestamp_data import TimestampData
 from originstamp_client.models.timestamp_request import TimestampRequest
 from originstamp_client.models.timestamp_response import TimestampResponse
 from originstamp_client.models.usage_response import UsageResponse
 from originstamp_client.models.webhook_request import WebhookRequest
+from originstamp_client.models.webhook_response import WebhookResponse

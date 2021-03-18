@@ -1,18 +1,18 @@
-# originstamp_client.SchedulerApi
+# originstamp_client.APIKeyApi
 
 All URIs are relative to *https://api.originstamp.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_active_currencies**](SchedulerApi.md#get_active_currencies) | **GET** /v3/currencies/get | Get active currencies
+[**get_api_key_usage**](APIKeyApi.md#get_api_key_usage) | **GET** /v3/api_key/usage | Usage
 
 
-# **get_active_currencies**
-> DefaultOfListOfCurrencyModel get_active_currencies(authorization)
+# **get_api_key_usage**
+> DefaultUsageResponse get_api_key_usage(authorization)
 
-Get active currencies
+Usage
 
-Returns an array with all active currencies.
+With this interface you can receive the current usage of your API key. The usage statistic refers to the associated account.
 
 ### Example
 ```python
@@ -23,15 +23,15 @@ from originstamp_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = originstamp_client.SchedulerApi()
+api_instance = originstamp_client.APIKeyApi()
 authorization = 'authorization_example' # str | A valid API key is essential for authorization to handle the request.
 
 try:
-    # Get active currencies
-    api_response = api_instance.get_active_currencies(authorization)
+    # Usage
+    api_response = api_instance.get_api_key_usage(authorization)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SchedulerApi->get_active_currencies: %s\n" % e)
+    print("Exception when calling APIKeyApi->get_api_key_usage: %s\n" % e)
 ```
 
 ### Parameters
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DefaultOfListOfCurrencyModel**](DefaultOfListOfCurrencyModel.md)
+[**DefaultUsageResponse**](DefaultUsageResponse.md)
 
 ### Authorization
 

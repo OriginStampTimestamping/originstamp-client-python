@@ -32,6 +32,7 @@ class TimestampData(object):
     swagger_types = {
         'currency_id': 'int',
         'private_key': 'str',
+        'seed_id': 'str',
         'submit_status': 'int',
         'timestamp': 'int',
         'transaction': 'str'
@@ -40,16 +41,18 @@ class TimestampData(object):
     attribute_map = {
         'currency_id': 'currency_id',
         'private_key': 'private_key',
+        'seed_id': 'seed_id',
         'submit_status': 'submit_status',
         'timestamp': 'timestamp',
         'transaction': 'transaction'
     }
 
-    def __init__(self, currency_id=None, private_key=None, submit_status=None, timestamp=None, transaction=None):  # noqa: E501
+    def __init__(self, currency_id=None, private_key=None, seed_id=None, submit_status=None, timestamp=None, transaction=None):  # noqa: E501
         """TimestampData - a model defined in Swagger"""  # noqa: E501
 
         self._currency_id = None
         self._private_key = None
+        self._seed_id = None
         self._submit_status = None
         self._timestamp = None
         self._transaction = None
@@ -59,6 +62,8 @@ class TimestampData(object):
             self.currency_id = currency_id
         if private_key is not None:
             self.private_key = private_key
+        if seed_id is not None:
+            self.seed_id = seed_id
         if submit_status is not None:
             self.submit_status = submit_status
         if timestamp is not None:
@@ -111,6 +116,29 @@ class TimestampData(object):
         """
 
         self._private_key = private_key
+
+    @property
+    def seed_id(self):
+        """Gets the seed_id of this TimestampData.  # noqa: E501
+
+        ID of associated seed which can be used to request separate seed information.  # noqa: E501
+
+        :return: The seed_id of this TimestampData.  # noqa: E501
+        :rtype: str
+        """
+        return self._seed_id
+
+    @seed_id.setter
+    def seed_id(self, seed_id):
+        """Sets the seed_id of this TimestampData.
+
+        ID of associated seed which can be used to request separate seed information.  # noqa: E501
+
+        :param seed_id: The seed_id of this TimestampData.  # noqa: E501
+        :type: str
+        """
+
+        self._seed_id = seed_id
 
     @property
     def submit_status(self):
@@ -202,6 +230,9 @@ class TimestampData(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(TimestampData, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

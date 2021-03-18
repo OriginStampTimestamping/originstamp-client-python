@@ -107,7 +107,7 @@ class Notification(object):
     def target(self):
         """Gets the target of this Notification.  # noqa: E501
 
-        Depending on the notification type, specify the target for the notification (e.g. email address or webhook url). The webhook url will reveive a POST request after timestamp was successfully created.  # noqa: E501
+        Depending on the notification type, specify the target for the notification (e.g. mail address or webhook URL). The webhook URL will receive a POST request after timestamp was successfully created.  # noqa: E501
 
         :return: The target of this Notification.  # noqa: E501
         :rtype: str
@@ -118,7 +118,7 @@ class Notification(object):
     def target(self, target):
         """Sets the target of this Notification.
 
-        Depending on the notification type, specify the target for the notification (e.g. email address or webhook url). The webhook url will reveive a POST request after timestamp was successfully created.  # noqa: E501
+        Depending on the notification type, specify the target for the notification (e.g. mail address or webhook URL). The webhook URL will receive a POST request after timestamp was successfully created.  # noqa: E501
 
         :param target: The target of this Notification.  # noqa: E501
         :type: str
@@ -149,6 +149,9 @@ class Notification(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Notification, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

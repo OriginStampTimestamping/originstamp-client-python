@@ -57,7 +57,7 @@ class ProofRequest(object):
     def currency(self):
         """Gets the currency of this ProofRequest.  # noqa: E501
 
-        0: Bitcoin  # noqa: E501
+        0: Bitcoin 1: Ethereum 2: AION 100: Südkurier  # noqa: E501
 
         :return: The currency of this ProofRequest.  # noqa: E501
         :rtype: int
@@ -68,7 +68,7 @@ class ProofRequest(object):
     def currency(self, currency):
         """Sets the currency of this ProofRequest.
 
-        0: Bitcoin  # noqa: E501
+        0: Bitcoin 1: Ethereum 2: AION 100: Südkurier  # noqa: E501
 
         :param currency: The currency of this ProofRequest.  # noqa: E501
         :type: int
@@ -149,6 +149,9 @@ class ProofRequest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ProofRequest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
