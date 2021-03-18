@@ -4,7 +4,7 @@
 
 ![](https://resources.originstamp.com/images/logo/originstamp-logo-landscape-mc_248x53.png)
 
-> A Python implementation of the OriginStamp API. For endpoint documentation see [OriginStamp Documentation](https://docs.originstamp.com)
+> A Python implementation of the OriginStamp API. For endpoint documentation see [OriginStamp Documentation](https://docs.originstamp.com).
 
 For more information, please visit [https://originstamp.com](https://originstamp.com).
 
