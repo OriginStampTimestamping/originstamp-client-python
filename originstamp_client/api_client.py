@@ -322,7 +322,7 @@ class ApiClient(object):
             If parameter async_req is False or missing,
             then the method will return the response directly.
         """
-        header_params['OriginStamp Client Python/2.0.0 (Python/'] = sys.version.split(' ', 1)[0] + ')'
+        header_params['User-Agent'] = 'OriginStamp Client Python/2.0.0 (Python/' + sys.version.split(' ', 1)[0] + ')'
         if not async_req:
             return self.__call_api(resource_path, method,
                                    path_params, query_params, header_params,

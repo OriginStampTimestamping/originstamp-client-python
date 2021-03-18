@@ -12,7 +12,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "originstamp-client"
-VERSION = "2.0.0"
+VERSION = "2.0.1"
 # To install the library, run the following
 #
 # python setup.py install
@@ -30,10 +30,10 @@ REQUIRES = [
 setup(
     name=NAME,
     version=VERSION,
-    description="OriginStamp API Documentation",
+    description="OriginStamp API Client",
     author_email="mail@originstamp.com",
     url="https://originstamp.com",
-    keywords=["Swagger", "OriginStamp API Documentation"],
+    keywords=["Swagger", "OriginStamp"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
